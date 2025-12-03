@@ -1,0 +1,224 @@
+/* data_kapal_edit_admin.css */
+
+/* Reset & Basic Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: #f0f2f5;
+}
+
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    background: #023e8a;
+    color: white;
+    position: fixed;
+    height: 100%;
+    padding: 2rem;
+}
+.sidebar .header h1 {
+    text-align: center;
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 3px solid rgba(255, 255, 255, 0.2);
+}
+.sidebar .admin-profile {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+}
+.sidebar .profile-icon {
+    width: 40px; height: 40px; background: #48cae4; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center; font-weight: bold;
+}
+.sidebar .nav-menu {
+    display: flex; flex-direction: column; gap: 1rem;
+}
+.sidebar .nav-menu a {
+    color: white; text-decoration: none; padding: 1rem; border-radius: 6px;
+    display: flex; align-items: center; gap: 0.8rem; transition: all 0.3s ease;
+}
+.sidebar .nav-menu i {
+    width: 20px;
+    text-align: center;
+}
+.sidebar .nav-menu a:hover { background: rgba(255, 255, 255, 0.1); }
+.sidebar .nav-menu a.active { background: #0077b6; font-weight: 600; }
+
+/* Main Content */
+.main-content {
+    margin-left: 250px;
+    padding: 2rem;
+    width: calc(100% - 250px);
+}
+.breadcrumb {
+    display: flex; align-items: center; gap: 0.5rem; color: #5a6a7b;
+    margin-bottom: 1rem; font-size: 0.85rem;
+}
+.breadcrumb .separator { color: #adb5bd; }
+.content-header h2 {
+    color: #1c3d5a; margin-bottom: 1.5rem; font-size: 1.75rem; font-weight: 600;
+}
+
+/* Form Card Styling */
+.form-card {
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.alert {
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+.alert.alert-danger {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+.alert.alert-info {
+    background-color: #d1ecf1;
+    color: #0c5460;
+    border: 1px solid #bee5eb;
+}
+
+.form-row {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 1rem;
+}
+.form-group {
+    flex: 1;
+    margin-bottom: 1rem;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: #495057;
+}
+.required {
+    color: #dc3545;
+    margin-left: 2px;
+}
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+}
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0,123,255,.15);
+}
+.help-text {
+    font-size: 0.8rem;
+    color: #6c757d;
+    margin-top: 0.25rem;
+}
+.form-control-file {
+    padding: 5px;
+}
+
+.form-subtitle {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #023e8a;
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.btn-container {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #e9ecef;
+    display: flex;
+    gap: 1rem;
+}
+
+.btn {
+    padding: 10px 24px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.2s ease;
+}
+.btn-primary {
+    background-color: #007bff;
+    color: white;
+}
+.btn-primary:hover {
+    background-color: #0069d9;
+}
+.btn-secondary {
+    background-color: #6c757d;
+    color: white;
+}
+.btn-secondary:hover {
+    background-color: #5a6268;
+}
+
+/* Gaya untuk input/select yang tidak valid */
+.form-group select.is-invalid,
+.form-group input.is-invalid {
+    border-color: #dc3545; /* Border merah */
+}
+
+.form-group select.is-invalid:focus,
+.form-group input.is-invalid:focus {
+    box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.25); /* Shadow merah saat fokus */
+}
+
+/* Gaya untuk teks pesan error */
+.port-error {
+    color: #dc3545;
+    font-size: 0.8rem;
+    margin-top: 0.25rem;
+    min-height: 1rem; /* Memberi ruang agar layout tidak "loncat" */
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+}
+@media (max-width: 768px) {
+    .main-content { margin-left: 0; width: 100%; }
+    .sidebar { width: 100%; position: static; height: auto; }
+}
+

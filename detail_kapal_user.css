@@ -1,0 +1,302 @@
+/* detail_specific_kapal_user.css */
+
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: #fff;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* === CSS HEADER (Sama seperti halaman lain) === */
+header {
+    padding: 0;
+    width: 100%;
+    color: white;
+}
+
+.header-top {
+    background-color: #D9E5F2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 55px;
+    width: 100%;
+    box-sizing: border-box;
+    min-height: 60px;
+}
+
+.logo-img-top {
+    height: 40px;
+    margin-left: 65px;
+}
+
+.tagline-text {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    color: #000;
+    text-align: right;
+}
+
+.header-bottom {
+    background-color: #0A2D50;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 60px;
+    height: 80px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.header-bottom .logo-container h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 700;
+    margin: 0;
+    color: white;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin-left: 370px;  /* Ini akan mendorong <nav> ke kanan */
+    margin-right: auto;
+}
+
+nav ul li {
+    margin-left: 30px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+
+.header-icons {
+    display: flex;
+    align-items: center;
+}
+
+.header-icons .icon {
+    height: 20px;
+    width: 20px;
+    margin-left: 20px;
+    cursor: pointer;
+    filter: brightness(0) invert(1);
+}
+
+/* Penyesuaian Responsif untuk Header */
+@media (max-width: 992px) {
+    .header-top {
+        flex-direction: column;
+        padding: 10px 20px;
+        min-height: 0;
+        justify-content: center;
+        text-align: center;
+    }
+    .logo-img-top {
+        margin-bottom: 10px;
+        margin-left: 0;
+    }
+    .tagline-text {
+        text-align: center;
+        font-size: 18px;
+    }
+    .header-bottom {
+        flex-direction: column;
+        height: auto;
+        padding: 15px 20px;
+    }
+    .header-bottom .logo-container {
+        margin-bottom: 15px;
+    }
+    .header-bottom nav ul {
+        justify-content: center;
+        margin-left: 0;
+        margin-right: 0;
+        flex-wrap: wrap;
+        margin-bottom: 15px;
+    }
+    .header-bottom nav ul li {
+        margin: 5px 15px;
+    }
+    .header-icons {
+        margin-top: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-top {
+        padding: 10px 15px;
+    }
+    .tagline-text {
+        font-size: 16px;
+    }
+    .logo-img-top {
+        height: 35px;
+    }
+    .header-bottom .logo-container h1 {
+        font-size: 24px;
+    }
+    .header-bottom nav ul li {
+        margin: 5px 10px;
+    }
+    .header-bottom nav ul li a {
+        font-size: 16px;
+    }
+    .header-bottom {
+        padding: 10px;
+    }
+}
+
+/* === AKHIR CSS HEADER === */
+
+
+/* === CSS KONTEN UTAMA HALAMAN DETAIL SPESIFIK KAPAL === */
+main {
+    flex-grow: 1;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.page-title {
+    font-family: 'Inknut Antiqua', serif;
+    font-size: 36px;
+    color: #000;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+
+.ship-detail-content {
+    display: flex;
+    gap: 40px; /* Jarak antara kolom gambar dan kolom info */
+    align-items: flex-start;
+}
+
+.ship-detail-image-column {
+    flex: 0 0 45%; /* Lebar kolom gambar, jangan tumbuh, jangan menyusut, basis 45% */
+    max-width: 450px; /* Lebar maksimum untuk gambar agar tidak terlalu besar */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Tombol akan rata kiri */
+}
+
+.ship-detail-image-column img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border: 1px solid #ddd; /* Border tipis untuk gambar */
+    margin-bottom: 15px; /* Jarak dari gambar ke tombol */
+}
+
+.detail-button.page-specific-detail-button { /* Tombol di bawah gambar detail */
+    background-color: #D9D9D9;
+    color: #000;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: normal; /* Font weight normal sesuai gambar */
+    padding: 8px 25px; /* Padding disesuaikan agar mirip gambar */
+    border: 1px solid #adadad;
+    border-radius: 2px; /* Radius lebih kecil */
+    cursor: pointer;
+}
+
+.ship-detail-info-column {
+    flex: 1; /* Kolom info mengambil sisa ruang */
+    padding-left: 20px; /* Sedikit jarak dari kolom gambar */
+}
+
+.info-section {
+    margin-bottom: 30px;
+}
+
+.info-section:last-child {
+    margin-bottom: 0;
+}
+
+.info-section h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px; /* Ukuran font subjudul */
+    color: #000;
+    margin-top: 0;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee; /* Garis tipis di bawah subjudul */
+    padding-bottom: 8px;
+}
+
+.ship-info-text { /* Menggunakan class yang sama dari halaman data kapal untuk konsistensi */
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    color: #333;
+    line-height: 1.7;
+    margin-top: 0;
+    margin-bottom: 10px; /* Jarak antar baris info */
+    padding-left: 10px; /* Sedikit indentasi untuk data */
+    border-bottom: 1px solid #e0e0e0; /* Garis tipis antar data point, seperti di gambar */
+    padding-bottom: 8px;
+}
+.ship-info-text:last-child {
+    border-bottom: none; /* Hilangkan border untuk item terakhir di setiap section */
+    margin-bottom: 0;
+}
+
+
+/* Penyesuaian Responsif untuk Konten Detail Kapal */
+@media (max-width: 850px) { /* Ubah breakpoint jika diperlukan */
+    .ship-detail-content {
+        flex-direction: column;
+        align-items: center; /* Pusatkan item saat menumpuk */
+        gap: 30px;
+    }
+
+    .ship-detail-image-column {
+        flex: 0 0 100%; /* Lebar penuh */
+        max-width: 500px; /* Batasi lebar gambar di mobile */
+        align-items: center; /* Pusatkan gambar dan tombol */
+    }
+
+    .detail-button.page-specific-detail-button {
+        align-self: center;
+    }
+
+    .ship-detail-info-column {
+        padding-left: 0; /* Hapus padding kiri saat menumpuk */
+        width: 100%;
+    }
+
+    .info-section h3 {
+        text-align: center;
+    }
+    .ship-info-text {
+        text-align: center;
+        padding-left: 0;
+    }
+}
+
+/* === AKHIR CSS KONTEN UTAMA === */
+
+
+/* === CSS FOOTER (Sama seperti halaman lain) === */
+footer {
+    background-color: #0A2D50;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    width: 100%;
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    margin-top: auto;
+}

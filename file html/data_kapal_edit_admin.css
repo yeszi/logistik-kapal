@@ -1,0 +1,374 @@
+/* data_kapal_edit_admin.css */
+
+/* Reset Styles & Font (Sudah ada) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+html, body {
+    height: 100%;
+    background-color: #f8f9fa; /* Latar belakang body utama */
+}
+
+/* Container Styles (Sudah ada) */
+.container {
+    display: flex;
+    min-height: 100vh;
+    background-color: #f8f9fa;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    width: 250px;
+    background: #023e8a;
+    padding: 2rem;
+    color: white;
+    position: fixed;
+    height: 100%;
+}
+
+.header h1 {
+    text-align: center;
+    font-size: 1.25rem; /* Ukuran font yang sudah disesuaikan agar satu baris */
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    color: #fff;
+    width: 100%;
+    border-bottom: 3px solid rgba(255, 255, 255, 0.2);
+}
+
+.admin-profile {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+}
+
+.profile-icon {
+    width: 40px;
+    height: 40px;
+    background: #48cae4;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.nav-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.nav-menu a {
+    color: white;
+    text-decoration: none;
+    padding: 1rem;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    transition: all 0.3s ease;
+}
+
+.nav-menu a:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.nav-menu .active {
+    background: #0077b6;
+    font-weight: 600;
+}
+
+.logout {
+    margin-top: auto;
+}
+
+
+
+/* Main Content Styles (Sudah ada) */
+.main-content {
+    margin-left: 250px;
+    padding: 2rem;
+    width: calc(100% - 250px);
+    min-height: 100vh;
+    background-color: #f0f2f5; /* Warna latar belakang yang sedikit berbeda untuk konten */
+    box-sizing: border-box;
+}
+
+/* Breadcrumb & Content Header (Sudah ada) */
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #5a6a7b; /* Warna breadcrumb */
+    margin-bottom: 1rem; /* Kurangi margin */
+    font-size: 0.85rem;
+}
+.separator {
+    color: #adb5bd;
+}
+.content-header h2 {
+    color: #1c3d5a; /* Warna judul lebih gelap */
+    margin-bottom: 1.5rem; /* Kurangi margin */
+    font-size: 1.75rem; /* Ukuran judul */
+    font-weight: 600;
+}
+
+.form-card {
+    background: #ffffff;
+    border: 1px solid #e0e5eb; /* Border kartu lebih halus */
+    border-radius: 8px;
+    padding: 1.5rem 2rem; /* Padding internal kartu */
+    margin-bottom: 2rem; /* Jarak antar kartu */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* Shadow halus */
+}
+
+.card-title {
+    font-size: 1.25rem; /* Ukuran judul kartu */
+    color: #023e8a;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid #e9ecef; /* Garis pemisah di bawah judul kartu */
+    font-weight: 600;
+}
+
+/* Form Group Styling (Gunakan ini untuk semua input) */
+.form-group {
+    margin-bottom: 1.25rem; /* Jarak antar form group */
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500; /* Sedikit lebih ringan dari bold */
+    color: #343a40;
+    font-size: 0.9rem;
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group select,
+.file-input-styled { /* Style input file juga */
+    width: 100%;
+    padding: 0.65rem 0.9rem; /* Padding input disesuaikan */
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    background-color: #fff;
+    color: #495057;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.file-input-styled { /* Khusus untuk input file jika ingin styling berbeda */
+    padding: 0.5rem; /* Padding berbeda untuk file input agar tombol browser pas */
+}
+
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #4d90fe; /* Warna border fokus lebih cerah */
+    outline: 0;
+    box-shadow: 0 0 0 0.15rem rgba(77, 144, 254, 0.25); /* Shadow fokus */
+}
+
+/* Image Upload Area */
+.image-preview-area {
+    width: 100%;
+    max-width: 280px; /* Batas lebar pratinjau */
+    min-height: 180px; /* Tinggi minimal */
+    border: 2px dashed #bcccdc; /* Border dashed lebih halus */
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0.75rem;
+    padding: 10px;
+    background-color: #f8f9fc;
+    overflow: hidden; /* Agar gambar tidak keluar dari border-radius */
+}
+
+#imagePreview {
+    max-width: 100%;
+    max-height: 180px;
+    display: block;
+    border-radius: 4px; /* Sedikit radius untuk gambar pratinjau */
+}
+
+#noImageText {
+    color: #6c757d;
+    font-size: 0.9rem;
+}
+
+/* Tombol Aksi di dalam Kartu */
+.card-actions {
+    margin-top: 1.25rem;
+    display: flex;
+    gap: 0.75rem;
+    justify-content: flex-start; /* Tombol rata kiri */
+}
+
+/* Tombol Umum (Bisa digunakan sebagai dasar) */
+.btn {
+    padding: 0.6rem 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+    border: 1px solid transparent;
+    text-decoration: none; /* Untuk tag <a> jika digunakan sebagai tombol */
+    display: inline-flex; /* Agar ikon dan teks sejajar jika ada */
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-success { /* Hijau untuk Tambahkan/Konfirmasi */
+    background-color: #28a745;
+    color: white;
+    border-color: #28a745;
+}
+.btn-success:hover {
+    background-color: #218838;
+    border-color: #1e7e34;
+}
+
+.btn-danger { /* Merah untuk Batal/Hapus */
+    background-color: #dc3545;
+    color: white;
+    border-color: #dc3545;
+}
+.btn-danger:hover {
+    background-color: #c82333;
+    border-color: #bd2130;
+}
+
+.btn-primary { /* Biru untuk aksi utama/Tambahkan Info */
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+}
+.btn-primary:hover {
+    background-color: #0069d9;
+    border-color: #0062cc;
+}
+
+.btn-secondary { /* Abu-abu untuk aksi sekunder/Sembunyikan */
+    background-color: #6c757d;
+    color: white;
+    border-color: #6c757d;
+}
+.btn-secondary:hover {
+    background-color: #5a6268;
+    border-color: #545b62;
+}
+.btn-warning { /* Kuning untuk aksi seperti Kosongkan */
+    background-color: #ffc107;
+    color: #212529;
+    border-color: #ffc107;
+}
+.btn-warning:hover {
+    background-color: #e0a800;
+    border-color: #d39e00;
+}
+
+
+/* Collapsible Card Styling */
+.collapsible-card .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0; /* Hapus margin bawah jika card-title ada di sini */
+}
+.collapsible-card .card-header .card-title {
+    margin-bottom: 0; /* Judul kartu di header tidak perlu margin bawah lagi */
+    border-bottom: none; /* Tidak perlu border bawah jika ada tombol di sampingnya */
+    padding-bottom: 0;
+}
+.collapsible-card .header-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.collapsible-card .card-content {
+    padding-top: 1.5rem;
+    border-top: 1px solid #e9ecef;
+    margin-top: 1rem;
+}
+
+
+/* Tombol Aksi Utama Form di Paling Bawah */
+.form-final-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #dee2e6;
+    justify-content: flex-start; /* Atau flex-end jika ingin tombol di kanan */
+}
+
+.btn-submit-final { /* Tombol Simpan Semua Data Kapal */
+    background-color: #023e8a; /* Warna utama admin panel */
+    color: white;
+    padding: 0.75rem 1.8rem;
+    font-size: 1rem;
+}
+.btn-submit-final:hover {
+    background-color: #002a5c;
+}
+
+.btn-cancel-final { /* Tombol Batalkan Semua */
+    background-color: #6c757d; /* Abu-abu sekunder */
+    color: white;
+    padding: 0.75rem 1.8rem;
+    font-size: 1rem;
+}
+.btn-cancel-final:hover {
+    background-color: #5a6268;
+}
+
+
+/* Penyesuaian Responsif Tambahan */
+@media (max-width: 768px) {
+    /* Sidebar dan Main Content sudah diatur di atas */
+    .content-header h2 {
+        font-size: 1.5rem;
+    }
+    .data-section-revamped {
+        padding: 0; /* Hapus padding jika .form-card sudah punya */
+    }
+    .form-card {
+        padding: 1rem; /* Kurangi padding kartu di mobile */
+        margin-bottom: 1.5rem;
+    }
+    .card-title {
+        font-size: 1.1rem; /* Kecilkan judul kartu */
+    }
+    .collapsible-card .card-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.75rem;
+    }
+    .collapsible-card .header-actions {
+        width: 100%;
+    }
+    .collapsible-card .header-actions .btn {
+        flex-grow: 1; /* Tombol bisa tumbuh mengisi ruang jika perlu */
+        text-align: center;
+    }
+    .card-actions, .form-final-actions {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+    .btn { /* Tombol jadi full width di mobile */
+        width: 100%;
+        padding: 0.75rem;
+        font-size: 0.95rem;
+    }
+}

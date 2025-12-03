@@ -1,0 +1,305 @@
+/* Ambil CSS dari respons saya sebelumnya dan modifikasi bagian ini */
+
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: #fff;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    padding: 0; /* Header tidak perlu padding sendiri */
+    width: 100%;
+    color: white; /* Default untuk teks di .header-top */
+}
+
+.header-top { /* Baris biru muda/tagline + logo BARU */
+    background-color: #D9E5F2;
+    display: flex; /* Gunakan flexbox untuk menata logo dan tagline */
+    align-items: center; /* Sejajarkan item secara vertikal */
+    justify-content: space-between; /* Logo di kiri, tagline di kanan, dengan ruang di antaranya */
+    padding: 10px 55px; /* Padding atas/bawah 10px, kiri/kanan 55px (sesuai padding awal tagline) */
+    width: 100%;
+    box-sizing: border-box;
+    min-height: 60px; /* Beri tinggi minimal agar logo dan teks nyaman */
+}
+
+.logo-img-top { /* Style untuk logo yang sekarang di header-bottom */
+    height: 40px; /* Sesuaikan ukuran logo untuk baris atas */
+    margin-left: 65px;
+}
+
+.tagline-text { /* Ganti dari .header-bottom p menjadi kelas spesifik */
+    margin: 0; /* Hapus margin default paragraf */
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    color: #000;
+    text-align: right; /* Pastikan tagline tetap rata kanan di ruangnya */
+    /* flex-grow: 1; /* Jika ingin tagline mengambil sisa ruang dan rata kanan di dalamnya */
+}
+
+.header-bottom {
+    background-color: #0A2D50;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 60px;
+    height: 80px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.logo-container { /* Sekarang hanya berisi <h1>Ocean Information</h1> */
+    display: flex; /* Masih berguna untuk alignment vertikal teks jika diperlukan */
+    align-items: center;
+    /* margin-right: 15px; /* Mungkin tidak diperlukan lagi atau sesuaikan */
+}
+
+.logo-container h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 700;
+    margin: 0;
+    color: white; /* Pastikan warna teks putih */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin-left: 370px;  /* Ini akan mendorong <nav> ke kanan */
+    margin-right: auto;
+}
+
+nav ul li {
+    margin-left: 30px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+nav ul li a.active {
+    text-decoration: none; /* Hapus underline default */
+    border-bottom: 3px solid white; /* Garis bawah untuk item aktif */
+    padding-bottom: 2px; /* Sedikit ruang untuk garis bawah */
+}
+
+.header-icons {
+    display: flex;
+    align-items: center;
+}
+
+.header-icons .icon {
+    height: 20px;
+    width: 20px;
+    margin-left: 20px;
+    cursor: pointer;
+    filter: brightness(0) invert(1);
+}
+
+main {
+    flex-grow: 1;
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.contact-section {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.contact-info {
+    flex-basis: 45%;
+}
+
+.contact-info h2 {
+    font-family: 'Inknut Antiqua', serif;
+    font-size: 36px;
+    color: #000;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.contact-info .placeholder-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.contact-info address p {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 10px;
+    color: #000;
+}
+
+.contact-info address p strong {
+    font-weight: 700;
+}
+
+.contact-form {
+    flex-basis: 50%;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 8px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    background-color: #E8EEF5;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.submit-btn {
+    background-color: #A0C7E4;
+    color: #000;
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #8AB9D9;
+}
+
+.map-section {
+    text-align: center;
+    margin-bottom: 40px;
+    border: 3px solid #000;
+    padding: 0;
+    line-height: 0;
+}
+
+.map-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+footer {
+    background-color: #0A2D50;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    width: 100%;
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.map-title {
+    font-family: 'Inknut Antiqua', serif; /* Samakan dengan judul lain agar konsisten */
+    font-size: 28px;
+    color: #000;
+    text-align: Left; /* Pastikan selalu di tengah */
+    margin-bottom: 20px; /* Beri jarak antara judul dan gambar peta */
+}
+
+.teks{
+    color: #5f5f5f;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .header-top {
+        flex-direction: column; /* Logo di atas tagline pada layar kecil */
+        padding: 10px 20px; /* Sesuaikan padding */
+        min-height: 0; /* Biarkan tinggi otomatis */
+    }
+    .logo-img-top {
+        margin-bottom: 10px; /* Jarak antara logo dan tagline */
+    }
+    .tagline-text {
+        text-align: center; /* Tagline di tengah pada layar kecil */
+        font-size: 18px;
+    }
+    .header-bottom {
+        flex-direction: column;
+        height: auto;
+        padding: 15px 20px;
+    }
+    .logo-container {
+        margin-bottom: 10px;
+    }
+    nav ul {
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+    nav ul li {
+        margin: 0 15px;
+    }
+    .header-icons {
+        margin-top: 10px;
+    }
+    .contact-section {
+        flex-direction: column;
+    }
+    .contact-info, .contact-form {
+        flex-basis: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-top {
+        padding: 10px 15px;
+    }
+    .tagline-text {
+        font-size: 16px;
+    }
+    .logo-img-top {
+        height: 35px;
+    }
+    .contact-info h2 {
+        font-size: 28px;
+    }
+    .form-group label, .submit-btn {
+        font-size: 16px;
+    }
+    .header-bottom {
+        padding: 10px;
+    }
+    nav ul li {
+        margin: 0 10px;
+    }
+}

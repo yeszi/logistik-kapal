@@ -1,0 +1,190 @@
+/* data_kapal_admin2.css */
+
+/* Reset & Basic Styles (diambil dari kode Anda, sedikit disesuaikan) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: #f0f2f5;
+}
+
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar (Tidak ada perubahan signifikan, biarkan sama) */
+.sidebar {
+    width: 250px;
+    background: #023e8a;
+    color: white;
+    position: fixed;
+    height: 100%;
+    padding: 2rem;
+}
+.sidebar .header h1 {
+    text-align: center;
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 3px solid rgba(255, 255, 255, 0.2);
+}
+.sidebar .admin-profile {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+}
+.sidebar .profile-icon {
+    width: 40px; height: 40px; background: #48cae4; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center; font-weight: bold;
+}
+.sidebar .nav-menu {
+    display: flex; flex-direction: column; gap: 1rem;
+}
+.sidebar .nav-menu a {
+    color: white; text-decoration: none; padding: 1rem; border-radius: 6px;
+    display: flex; align-items: center; gap: 0.8rem; transition: all 0.3s ease;
+}
+.sidebar .nav-menu a:hover { background: rgba(255, 255, 255, 0.1); }
+.sidebar .nav-menu a.active { background: #0077b6; font-weight: 600; }
+.sidebar .logout { margin-top: auto; }
+
+/* Main Content (Tidak ada perubahan signifikan) */
+.main-content {
+    margin-left: 250px;
+    padding: 2rem;
+    width: calc(100% - 250px);
+}
+.breadcrumb {
+    display: flex; align-items: center; gap: 0.5rem; color: #5a6a7b;
+    margin-bottom: 1rem; font-size: 0.85rem;
+}
+.breadcrumb .separator { color: #adb5bd; }
+.content-header h2 {
+    color: #1c3d5a; margin-bottom: 1.5rem; font-size: 1.75rem; font-weight: 600;
+}
+
+/* --- PERUBAHAN & PENAMBAHAN GAYA UNTUK TABEL --- */
+
+.table-container {
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    overflow-x: auto; /* Untuk responsif jika tabel terlalu lebar */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+th, td {
+    padding: 14px 16px;
+    text-align: left;
+    border-bottom: 1px solid #e9ecef;
+}
+
+thead th {
+    background-color: #f8f9fa;
+    color: #495057;
+    font-weight: 600;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+tbody tr {
+    transition: background-color 0.2s ease;
+}
+
+tbody tr:hover {
+    background-color: #f1f3f5;
+}
+
+tbody td {
+    color: #343a40;
+    vertical-align: middle;
+}
+
+/* --- STYLING BARU UNTUK TOMBOL AKSI --- */
+.action-buttons {
+    display: flex;
+    gap: 8px; /* Jarak antar tombol */
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    color: white;
+    transition: all 0.2s ease;
+}
+
+.btn i {
+    font-size: 12px;
+}
+
+.btn-edit {
+    background-color: #007bff; /* Biru */
+}
+
+.btn-edit:hover {
+    background-color: #0069d9;
+    transform: translateY(-1px);
+}
+
+.btn-delete {
+    background-color: #dc3545; /* Merah */
+}
+
+.btn-delete:hover {
+    background-color: #c82333;
+    transform: translateY(-1px);
+}
+
+.no-data {
+    text-align: center;
+    padding: 20px;
+    color: #6c757d;
+}
+
+/* Modal Styles (Sedikit diperbarui) */
+.modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.5); }
+.modal-content { background-color: #fefefe; margin: 5% auto; padding: 25px; border: none; border-radius: 8px; width: 90%; max-width: 500px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); animation: fadeIn 0.3s; }
+@keyframes fadeIn { from {opacity: 0; transform: translateY(-20px);} to {opacity: 1; transform: translateY(0);} }
+.close { color: #aaa; float: right; font-size: 28px; font-weight: bold; cursor: pointer; }
+.close:hover, .close:focus { color: #000; text-decoration: none; }
+.modal h2 { color: #023e8a; margin-bottom: 25px; text-align: center; }
+.form-group { margin-bottom: 15px; }
+.form-group label { display: block; margin-bottom: 8px; font-weight: 500; color: #333; }
+.form-group input { width: 100%; padding: 10px; border: 1px solid #ced4da; border-radius: 5px; font-size: 14px; }
+.form-group input:focus { border-color: #007bff; outline: none; box-shadow: 0 0 0 2px rgba(0,123,255,.25); }
+.btn-container { text-align: right; margin-top: 25px; }
+.btn-update { background-color: #007bff; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; margin-right: 10px; }
+.btn-update:hover { background-color: #0056b3; }
+.btn-cancel { background-color: #6c757d; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; }
+.btn-cancel:hover { background-color: #5a6268; }
+
+/* Responsive (Tambahan untuk .table-container) */
+@media (max-width: 768px) {
+    .main-content { margin-left: 0; width: 100%; }
+    .sidebar { width: 100%; position: static; height: auto; }
+    .action-buttons { flex-direction: column; align-items: flex-start; }
+}

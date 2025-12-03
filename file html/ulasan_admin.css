@@ -1,0 +1,54 @@
+/* ulasan_admin.css */
+
+.ulasan-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.ulasan-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    border: 1px solid #e9ecef;
+}
+
+.ulasan-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #e9ecef;
+    flex-wrap: wrap; /* Agar responsif jika nama/email panjang */
+    gap: 1rem;
+}
+
+.ulasan-header .nama {
+    font-weight: 600;
+    color: #023e8a;
+}
+
+.ulasan-header .email {
+    color: #0077b6;
+    font-size: 0.9rem;
+}
+
+.ulasan-header .tanggal {
+    font-size: 0.85rem;
+    color: #6c757d;
+}
+
+.ulasan-body {
+    padding: 1.5rem;
+    line-height: 1.6;
+    color: #495057;
+}
+
+.no-data {
+    text-align: center;
+    color: #666;
+    padding: 40px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+}

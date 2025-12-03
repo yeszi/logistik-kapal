@@ -1,0 +1,20 @@
+CREATE DATABASE logistik_db;
+
+USE logistik_db;
+
+CREATE TABLE kapal (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nama_kapal VARCHAR(255) NOT NULL,
+    jenis_kapal VARCHAR(255),
+    tahun_dibangun INT,
+    kapasitas INT
+);
+
+
+CREATE TABLE pengguna (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(255) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    role ENUM('admin', 'user') DEFAULT 'user',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);

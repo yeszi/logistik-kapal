@@ -1,0 +1,153 @@
+/* data_kapal_user.css */
+
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: #f9f9fc; /* Sedikit ganti warna background agar lebih soft */
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* === BAGIAN CSS HEADER SUDAH DIHAPUS DARI SINI === */
+/* Semua style untuk .header-top, .header-bottom, nav, dll. sekarang ada di file PHP */
+
+
+/* === CSS KONTEN UTAMA HALAMAN DATA KAPAL === */
+main {
+    flex-grow: 1;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 20px; /* Tambah padding atas */
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.page-title {
+    font-family: 'Inknut Antiqua', serif;
+    font-size: 36px;
+    color: #0A2D50; /* Samakan dengan warna tema header */
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 40px;
+}
+
+.ship-list {
+    display: flex;
+    flex-direction: column;
+    gap: 60px; /* Jarak antar entri kapal */
+}
+
+.ship-entry {
+    display: flex;
+    gap: 40px; /* Jarak antara gambar dan detail */
+    align-items: center; /* Sejajarkan vertikal di tengah */
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ship-entry:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+}
+
+.ship-entry-reverse {
+    flex-direction: row-reverse;
+}
+
+.ship-image-container {
+    flex-basis: 40%;
+    max-width: 420px;
+    border-radius: 8px;
+    overflow: hidden; /* Agar gambar mengikuti border-radius */
+}
+
+.ship-image-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.ship-details-container {
+    flex-basis: 60%;
+    display: flex;
+    flex-direction: column;
+}
+
+.ship-details-container h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    color: #0A2D50;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.ship-info-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    color: #555;
+    margin: 5px 0;
+    line-height: 1.6;
+}
+
+.detail-button {
+    background: #0A2D50;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    align-self: flex-start;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.detail-button:hover {
+    background-color: #1e4a7a;
+}
+
+/* Penyesuaian Responsif untuk Konten */
+@media (max-width: 768px) {
+    .page-title {
+        font-size: 28px;
+    }
+
+    .ship-entry,
+    .ship-entry-reverse {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .ship-details-container {
+        align-items: center;
+    }
+
+    .detail-button {
+        align-self: center;
+    }
+}
+
+/* === AKHIR CSS KONTEN UTAMA === */
+
+
+/* === CSS FOOTER === */
+footer {
+    background-color: #0A2D50;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    margin-top: auto;
+}

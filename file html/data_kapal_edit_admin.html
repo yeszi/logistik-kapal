@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OceanInformation - Edit Data Kapal</title>
+    <link rel="stylesheet" href="data_kapal_edit_admin.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="header">
+                <h1>Ocean Information</h1>
+                <div class="admin-profile">
+                    <div class="profile-icon">A</div>
+                    <span>ADMIN</span>
+                </div>
+            </div>
+            <nav class="nav-menu">
+                <a href="data_kapal_admin.html">🏠 Home</a>
+                <a href="#" class="active">🚢 Data Kapal</a>
+                <a href="login_admin.html" class="logout">🚪 Logout</a>
+            </nav>
+        </div>
+
+        <div class="main-content">
+            <div class="breadcrumb">
+                <span>Admin</span>
+                <span class="separator">|</span>
+                <span>Data Kapal</span>
+                <span class="separator">|</span>
+                <span>Edit Data Kapal</span>
+            </div>
+
+            <div class="content-header">
+                <h2>Tambah Data Kapal</h2> </div>
+
+            <div class="data-section-revamped"> <form id="shipDataFormMultiStage">
+                    <div class="form-card">
+                        <h3 class="card-title">Nama Kapal</h3>
+                        <div class="form-group">
+                            <label for="shipName">Nama Kapal</label>
+                            <input type="text" id="shipName" name="shipName" placeholder="Masukkan nama kapal">
+                        </div>
+                    </div>
+
+                    <div class="form-card">
+                        <h3 class="card-title">Upload Image</h3>
+                        <div class="form-group">
+                            <label for="shipImageInput">Pilih Gambar Kapal</label>
+                            <input type="file" id="shipImageInput" name="shipImageInput" accept="image/*" class="file-input-styled">
+                            <div class="image-preview-area">
+                                <img id="imagePreview" src="#" alt="Pratinjau Gambar" style="display:none;">
+                                <span id="noImageText">Belum ada gambar dipilih</span>
+                            </div>
+                        </div>
+                        <div class="card-actions">
+                            <button type="button" id="confirmImageBtn" class="btn btn-success">Tambahkan Gambar</button>
+                            <button type="button" id="cancelImageBtn" class="btn btn-danger">Batal</button>
+                        </div>
+                    </div>
+
+                    <div class="form-card collapsible-card">
+                        <div class="card-header">
+                            <h3 class="card-title">Informasi Umum Kapal</h3>
+                            <div class="header-actions">
+                                <button type="button" class="btn btn-primary toggle-form-btn" data-target="infoUmumFieldsContent">Tambahkan Info</button>
+                                <button type="button" class="btn btn-secondary cancel-form-btn" data-target="infoUmumFieldsContent" style="display: none;">Sembunyikan</button>
+                            </div>
+                        </div>
+                        <div id="infoUmumFieldsContent" class="card-content" style="display:none;">
+                            <div class="form-group">
+                                <label for="shipType">Jenis Kapal</label>
+                                <select id="shipType" name="shipType">
+                                    <option value="">Pilih jenis kapal</option>
+                                    <option value="container">Kapal Kontainer</option>
+                                    <option value="tanker">Kapal Tanker</option>
+                                    <option value="bulk">Kapal Bulk Carrier</option>
+                                    <option value="roro">Kapal Ro-Ro</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="loadDead">Load Dead (Ton)</label>
+                                <input type="number" id="loadDead" name="loadDead" placeholder="Masukkan beban mati">
+                            </div>
+                            <div class="form-group">
+                                <label for="shipStatus">Status</label>
+                                <select id="shipStatus" name="shipStatus">
+                                    <option value="berlabuh">Berlabuh</option>
+                                    <option value="berlayar">Berlayar</option>
+                                    <option value="perbaikan">Dalam Perbaikan</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="location">Lokasi</label>
+                                <input type="text" id="location" name="location" placeholder="Masukkan lokasi kapal">
+                            </div>
+                            <button type="button" class="btn btn-warning clear-section-btn" data-section="infoUmumFieldsContent">Kosongkan Info Umum</button>
+                        </div>
+                    </div>
+
+                    <div class="form-card collapsible-card">
+                        <div class="card-header">
+                            <h3 class="card-title">Spesifikasi Teknik</h3>
+                             <div class="header-actions">
+                                <button type="button" class="btn btn-primary toggle-form-btn" data-target="spesifikasiTeknikFieldsContent">Tambahkan Spek</button>
+                                <button type="button" class="btn btn-secondary cancel-form-btn" data-target="spesifikasiTeknikFieldsContent" style="display: none;">Sembunyikan</button>
+                            </div>
+                        </div>
+                        <div id="spesifikasiTeknikFieldsContent" class="card-content" style="display:none;">
+                            <div class="form-group">
+                                <label for="shipLength">Panjang Kapal (LOA)</label>
+                                <input type="text" id="shipLength" name="shipLength" placeholder="Contoh: 150m">
+                            </div>
+                            <div class="form-group">
+                                <label for="shipWidth">Lebar Kapal</label>
+                                <input type="text" id="shipWidth" name="shipWidth" placeholder="Contoh: 25m">
+                            </div>
+                            <div class="form-group">
+                                <label for="shipIMO">Nomor IMO</label>
+                                <input type="text" id="shipIMO" name="shipIMO" placeholder="Masukkan nomor IMO">
+                            </div>
+                            <button type="button" class="btn btn-warning clear-section-btn" data-section="spesifikasiTeknikFieldsContent">Kosongkan Spek Teknik</button>
+                        </div>
+                    </div>
+
+                    <div class="form-final-actions">
+                        <button type="submit" class="btn btn-submit-final">Simpan Semua Data Kapal</button>
+                        <button type="reset" class="btn btn-cancel-final">Batalkan Semua</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Basic JavaScript for toggling sections and image preview
+        document.addEventListener('DOMContentLoaded', function () {
+            // Image Preview
+            const imageInput = document.getElementById('shipImageInput');
+            const imagePreview = document.getElementById('imagePreview');
+            const noImageText = document.getElementById('noImageText');
+
+            if (imageInput) {
+                imageInput.addEventListener('change', function (e) {
+                    if (e.target.files && e.target.files[0]) {
+                        const reader = new FileReader();
+                        reader.onload = function (event) {
+                            imagePreview.src = event.target.result;
+                            imagePreview.style.display = 'block';
+                            if(noImageText) noImageText.style.display = 'none';
+                        }
+                        reader.readAsDataURL(e.target.files[0]);
+                    } else {
+                        imagePreview.src = '#';
+                        imagePreview.style.display = 'none';
+                        if(noImageText) noImageText.style.display = 'block';
+                    }
+                });
+            }
+
+            // Confirm/Cancel Image (Placeholder for actual logic)
+            const confirmImageBtn = document.getElementById('confirmImageBtn');
+            if (confirmImageBtn) {
+                confirmImageBtn.addEventListener('click', function() {
+                    if (imageInput && imageInput.files.length > 0) {
+                        alert('Gambar "' + imageInput.files[0].name + '" ditambahkan (simulasi).');
+                        // Di sini Anda bisa menambahkan logika untuk "mengunci" gambar atau menyiapkannya untuk submit
+                    } else {
+                        alert('Pilih gambar terlebih dahulu.');
+                    }
+                });
+            }
+            const cancelImageBtn = document.getElementById('cancelImageBtn');
+            if (cancelImageBtn) {
+                cancelImageBtn.addEventListener('click', function() {
+                    if (imageInput) imageInput.value = ''; // Reset file input
+                    imagePreview.src = '#';
+                    imagePreview.style.display = 'none';
+                    if(noImageText) noImageText.style.display = 'block';
+                    alert('Upload gambar dibatalkan.');
+                });
+            }
+
+
+            // Toggle Collapsible Sections
+            const toggleButtons = document.querySelectorAll('.toggle-form-btn');
+            const cancelFormButtons = document.querySelectorAll('.cancel-form-btn');
+
+            toggleButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    const targetId = this.getAttribute('data-target');
+                    const targetContent = document.getElementById(targetId);
+                    const correspondingCancelButton = this.closest('.card-header').querySelector('.cancel-form-btn[data-target="' + targetId + '"]');
+                    if (targetContent) {
+                        targetContent.style.display = 'block';
+                        this.style.display = 'none';
+                        if(correspondingCancelButton) correspondingCancelButton.style.display = 'inline-block';
+                    }
+                });
+            });
+
+            cancelFormButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    const targetId = this.getAttribute('data-target');
+                    const targetContent = document.getElementById(targetId);
+                    const correspondingToggleButton = this.closest('.card-header').querySelector('.toggle-form-btn[data-target="' + targetId + '"]');
+                     if (targetContent) {
+                        targetContent.style.display = 'none';
+                        // Optional: clear fields in targetContent
+                        // targetContent.querySelectorAll('input, select').forEach(field => field.value = '');
+                        this.style.display = 'none';
+                        if(correspondingToggleButton) correspondingToggleButton.style.display = 'inline-block';
+                    }
+                });
+            });
+
+            // Clear Section Fields
+            const clearSectionButtons = document.querySelectorAll('.clear-section-btn');
+            clearSectionButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const sectionId = this.getAttribute('data-section');
+                    const sectionContent = document.getElementById(sectionId);
+                    if (sectionContent) {
+                        sectionContent.querySelectorAll('input[type="text"], input[type="number"], select').forEach(field => {
+                            if (field.tagName === 'SELECT') {
+                                field.selectedIndex = 0; // Reset select to the first option
+                            } else {
+                                field.value = ''; // Clear text and number inputs
+                            }
+                        });
+                        alert('Data di bagian ini telah dikosongkan.');
+                    }
+                });
+            });
+
+            // Final form submission (placeholder)
+            const mainForm = document.getElementById('shipDataFormMultiStage');
+            if (mainForm) {
+                mainForm.addEventListener('submit', function(e) {
+                    e.preventDefault(); // Prevent actual submission for demo
+                    alert('Data kapal akan disimpan (simulasi).');
+                    // Kumpulkan semua data dari form di sini
+                });
+                mainForm.addEventListener('reset', function(e) {
+                    // Reset image preview
+                    if (imageInput) imageInput.value = '';
+                    imagePreview.src = '#';
+                    imagePreview.style.display = 'none';
+                    if(noImageText) noImageText.style.display = 'block';
+
+                    // Hide collapsible sections and reset their toggle buttons
+                    document.querySelectorAll('.collapsible-content').forEach(content => {
+                        content.style.display = 'none';
+                        const targetId = content.id;
+                        const header = content.closest('.collapsible-card').querySelector('.card-header');
+                        if (header) {
+                            const toggleBtn = header.querySelector('.toggle-form-btn[data-target="' + targetId + '"]');
+                            const cancelBtn = header.querySelector('.cancel-form-btn[data-target="' + targetId + '"]');
+                            if (toggleBtn) toggleBtn.style.display = 'inline-block';
+                            if (cancelBtn) cancelBtn.style.display = 'none';
+                        }
+                    });
+                    alert('Semua input telah dibatalkan/direset (simulasi).');
+                });
+            }
+        });
+    </script>
+</body>
+</html>

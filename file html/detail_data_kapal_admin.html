@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OceanInformation - Isi Detail Kapal</title>
+    <link rel="stylesheet" href="detail_data_kapal_admin.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="header">
+                <h1>Ocean Information</h1>
+                <div class="admin-profile">
+                    <div class="profile-icon">A</div>
+                    <span>ADMIN</span>
+                </div>
+            </div>
+
+            <nav class="nav-menu">
+                <a href="data_kapal_admin.html">🏠 Home</a>
+                <a href="data_kapal_edit_admin.html" class="active">🚢 Data Kapal</a>
+                <a href="login_admin.html" class="logout">🚪 Logout</a>
+            </nav>
+        </div>
+
+        <div class="main-content">
+            <div class="breadcrumb">
+                <span>Admin</span>
+                <span class="separator">|</span>
+                <span>Data Kapal</span>
+                <span class="separator">|</span>
+                <span>Detail Data Kapal</span>
+            </div>
+
+            <div class="content-header">
+                <h2>Detail Data Kapal</h2>
+            </div>
+
+
+            <div class="ship-identification-section">
+                <img src="assets/placeholder-ship-1.jpg" alt="X-Press Mekong" class="ship-id-image">
+                <h3 class="ship-id-name">X-Press Mekong</h3>
+            </div>
+
+            <form id="formDetailKapal">
+                <div class="detail-input-section">
+                    <div class="section-input-header">
+                        <h4>Informasi Umum Kapal</h4>
+                    </div>
+                    <textarea id="infoUmum" name="infoUmum" rows="8" placeholder="Masukkan informasi umum kapal..."></textarea>
+                </div>
+
+                <div class="detail-input-section">
+                    <div class="section-input-header">
+                        <h4>Spesifikasi Teknis</h4>
+                    </div>
+                    <textarea id="spekTeknis" name="spekTeknis" rows="8" placeholder="Masukkan spesifikasi teknis kapal..."></textarea>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-save">Simpan Detail</button>
+                    <button type="button" class="btn btn-cancel">Batal</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

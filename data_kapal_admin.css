@@ -1,0 +1,239 @@
+/* data_kapal_admin.css */
+
+/* Reset Styles (Sudah ada) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+html, body {
+    height: 100%;
+    background-color: #e9edf2; /* Latar belakang body utama yang sedikit abu-abu/putih */
+}
+
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar Styles (Tetap Sama) */
+.sidebar {
+    width: 250px;
+    background: #023e8a;
+    padding: 2rem;
+    color: white;
+    position: fixed;
+    height: 100%;
+}
+
+.header h1 {
+    text-align: center;
+    font-size: 1.25rem; /* Ukuran font yang sudah disesuaikan agar satu baris */
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    color: #fff;
+    width: 100%;
+    border-bottom: 3px solid rgba(255, 255, 255, 0.2);
+}
+
+.admin-profile {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+}
+
+.profile-icon {
+    width: 40px;
+    height: 40px;
+    background: #48cae4;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.nav-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.nav-menu a {
+    color: white;
+    text-decoration: none;
+    padding: 1rem;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    transition: all 0.3s ease;
+}
+
+.nav-menu a:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.nav-menu .active {
+    background: #0077b6;
+    font-weight: 600;
+}
+
+.logout {
+    margin-top: auto;
+}
+
+/* Main Content Styles (Tetap Sama) */
+.main-content {
+    margin-left: 250px;
+    padding: 2rem;
+    width: calc(100% - 250px);
+    min-height: 100vh;
+    background-color: #f0f2f5;
+    box-sizing: border-box;
+}
+
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #5a6a7b;
+    margin-bottom: 1rem;
+    font-size: 0.85rem;
+}
+.separator {
+    color: #adb5bd;
+}
+
+.content-header h2 {
+    color: #1c3d5a;
+    margin-bottom: 1.5rem;
+    font-size: 1.75rem;
+    font-weight: 600;
+}
+
+
+.ship-list-item {
+    background-color: #fff;
+    border-radius: 6px;
+    margin-bottom: 2.5rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.08);
+    overflow: hidden;
+    max-width: 700px; /* Atur lebar maksimum yang Anda inginkan untuk setiap item kapal */
+    margin-right: auto; /* Membuat item berada di tengah secara horizontal */
+}
+
+.ship-item-header {
+    background-color: #0077b6; /* Warna header item kapal (biru dari nav active) */
+    color: white;
+    padding: 0.9rem 1.25rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.ship-item-content {
+    padding: 1.25rem;
+    border: 1px solid #dee2e6;
+    border-top: none;
+    border-radius: 0 0 6px 6px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    min-height: 120px; /* Disesuaikan agar tidak terlalu tinggi jika hanya tombol */
+}
+
+.view-detail-btn {
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1.2rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+}
+
+.view-detail-btn:hover {
+    background-color: #0069d9;
+}
+
+/* Footer Styles (Tetap Sama) */
+footer {
+    background-color: #3c5f6e;
+    /* Jika ingin sama dengan sidebar baru (#023e8a):
+    background-color: #023e8a;
+    */
+    color: rgba(255, 255, 255, 0.9);
+    text-align: center;
+    padding: 1.25rem 0;
+    font-size: 0.9rem;
+}
+
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .sidebar {
+        width: 200px;
+    }
+    .main-content {
+        margin-left: 200px;
+        width: calc(100% - 200px);
+        padding: 2rem;
+    }
+    /* Untuk item kapal di layar tablet, Anda bisa biarkan max-width atau sesuaikan */
+    .ship-list-item {
+        max-width: 90%; /* Misalnya, sedikit lebih lebar relatif terhadap kontainer */
+    }
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        position: static;
+        height: auto;
+        flex-direction: column;
+        padding: 1rem;
+    }
+    .sidebar .nav-menu {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .sidebar .logout {
+        margin-top: 1rem;
+        border-top: none;
+        text-align: center;
+    }
+    .main-content {
+        margin-left: 0;
+        width: 100%;
+        padding: 1.5rem;
+    }
+    .ship-list-item {
+        max-width: 100%; /* Di layar kecil, item kapal mengambil lebar penuh */
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .ship-item-header {
+        font-size: 1rem;
+        padding: 0.75rem 1rem;
+    }
+    .ship-item-content {
+        padding: 1rem;
+        justify-content: center;
+        min-height: 40px; /* Sesuaikan lagi jika perlu */
+    }
+
+    footer {
+        font-size: 0.85rem;
+        padding: 1rem 0;
+    }
+}
